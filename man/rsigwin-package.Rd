@@ -6,7 +6,7 @@
 	calculate and display significant windows and ridgeograms
 }
 \description{
-R implemenation of SigWin-detector developed be Márcia A Inda. 
+R implemenation of SigWin-detector developed be Marcia A Inda. 
 }
 \details{
 \tabular{ll}{
@@ -23,7 +23,7 @@ Wim de Leeuw
 }
 \references{ Details can be found in: SigWin-detector: a Grid-enabled workflow for discovering
 enriched windows of genomic features related to DNA sequences
-Márcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum,
+Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum,
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \keyword{ package }
@@ -31,7 +31,8 @@ BMC Research Notes 2008; 1:63}
 \examples{
 lseq <- c(rnorm(200),rnorm(100,-1),rnorm(50),rnorm(50,4.0),rnorm(100))
 ridgeogram <- Ridgeogram(lseq)
-RidgeogramPlot(ridgeogram,0.05,"Example ridgeogram",high.col="green",low.col="red")
+RidgeogramPlot(ridgeogram,0.05,"Example ridgeogram",
+	high.col="green",low.col="red")
 }
 
 

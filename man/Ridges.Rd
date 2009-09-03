@@ -5,7 +5,8 @@
   Use SigWin to calculate rigdges given a certain set of window sizes. 
 }
 \usage{
-Ridges(s, window.size, pos=NULL,pval = 0.05, antiRidge = FALSE, adjust.method = "BH", min.sup = length(window.size),resolution=400)
+Ridges(s, window.size, pos=NULL,pval = 0.05, antiRidge = FALSE, 
+    adjust.method = "BH", min.sup = length(window.size),resolution=400)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -30,11 +31,15 @@ Ridges(s, window.size, pos=NULL,pval = 0.05, antiRidge = FALSE, adjust.method = 
 }
 \seealso{ SigWin,Ridgeogram }
 \examples{
-	lseq <- c(rnorm(200),rnorm(100,-1),rnorm(50),rnorm(50,4.0),rnorm(100))
-	ridgelist <- list(Ridges(lseq,seq(45,65,by=2)),Ridges(lseq,seq(45,65,by=2),antiRidge=TRUE))
-	RidgePlot(ridgelist,lseq,labels=c("ridges","anti-ridges"),col=c("#88FF88","#FF8888"))
+	lseq <- c(rnorm(200),rnorm(100,-1),rnorm(50),
+		rnorm(50,4.0),rnorm(100))
+	rp <- Ridges(lseq,seq(45,65,by=2))
+	np <- Ridges(lseq,seq(45,65,by=2),antiRidge=TRUE)
+	RidgePlot(list(rp,np),lseq,labels=c("ridges","anti-ridges"),
+	   col=c("#88FF88","#FF8888"))
 
-	lseq <- c(rnorm(100),rnorm(100,3),rnorm(300),rnorm(100,-3),rnorm(200),rnorm(50,4.0),rnorm(100))
+	lseq <- c(rnorm(100),rnorm(100,3),rnorm(300),
+		rnorm(100,-3),rnorm(200),rnorm(50,4.0),rnorm(100))
 	rg <- Ridgeogram(lseq)
 	#find 5 window sizes in which lowest p-value occur
 	win.neg <- 1+2*order(apply(log(rg$low),2,min))[1:5]

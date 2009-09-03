@@ -35,7 +35,7 @@ the rows. In this way the output can be rendered as an image
 }
 \references{ SigWin-detector: a Grid-enabled workflow for discovering 
 enriched windows of genomic features related to DNA sequences
-Márcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
+Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \author{ w.c.deleeuw@uva.nl }
@@ -49,7 +49,8 @@ median filtering can be considered.
 \examples{
 
 lseq <- c(rnorm(200),rnorm(100,-1),rnorm(50),rnorm(50,4.0),rnorm(100))
-RidgeogramPlot(Ridgeogram(lseq),0.5,"Example ridgeogram",high.col="green",low.col="red")
+rg <- Ridgeogram(lseq)
+RidgeogramPlot(rg,0.5,"Example ridgeogram",high.col="green",low.col="red")
 }
 
 \keyword{ hplot }% __ONLY ONE__ keyword per line

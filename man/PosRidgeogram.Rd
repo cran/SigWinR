@@ -17,12 +17,23 @@ PosRidgeogram(seq,pos,resolution=400,winrange=c(0,max(pos)-min(pos)),adjust.meth
 \arguments{
   \item{seq}{sequence of samples}
   \item{pos}{sequence containing location of samples}
-  \item{resolution}{resolution of ridgeogram }
-  \item{winrange}{range of window sizes to be used}
+  \item{resolution}{resolution of ridgeogram. Both the number of samples along the sequence for 
+which a p-value has to be calculated and the number of widow sizes to be used between the minimum 
+and maximum value specified in winrange. }
+  \item{winrange}{minimum and maximum values for the range of window sizes for which the Ridgeogram 
+has to be calculated. The resolution parameter determines the number of window sizes between the 
+minimum and maximum will be calculated.}
   \item{adjust.method}{method for multiple testing correction (see p.adjust for valid options) }
   \item{circular}{assume the sequence is circular}
 }
 \details{
+For a PosRidgeogram the number of entries in the ridgeogram given a certain 
+window-size is not fixed by the length of the sequence as it is in the standard 
+ridgeogram. The window-size is linked to the position values in 
+the input sequence and not to element number in the sequence.  
+The sampling density must be specified seperately by the resolution parameter.  
+This resolution is also independent the window-size for which ridges and anti-ridges 
+will be calculated.  
 }
 \value{
   A list containing 
@@ -43,13 +54,13 @@ can be rendered as an image (see RidgeogramPlot). }
 }
 \references{ SigWin-detector: a Grid-enabled workflow for discovering 
 enriched windows of genomic features related to DNA sequences
-Márcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
+Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \author{ w.c.deleeuw@uva.nl }
 \note{ 
 The computation time is significantly higher than the Ridgeogram function.
-1000 do not pose a problem but if they are longer you'll need patience. }
+Resolutions below 1000 do not pose a problem but for higher resolutions you'll need patience. }
 \seealso{ SigWin,RidgeogramPlot }
 \examples{
 

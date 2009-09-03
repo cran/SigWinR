@@ -40,7 +40,7 @@ sequences the length of the output is equal to the resolution parameter.
 }
 \references{ SigWin-detector: a Grid-enabled workflow for discovering 
 enriched windows of genomic features related to DNA sequences
-Márcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
+Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \author{ w.c.deleeuw@uva.nl }

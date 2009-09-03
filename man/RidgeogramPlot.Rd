@@ -19,16 +19,16 @@ RidgeogramPlot(ridgeogram, pval=0.05, ptitle = "Ridgeogram", high.col = "red", l
 }
 \references{ SigWin-detector: a Grid-enabled workflow for discovering 
 enriched windows of genomic features related to DNA sequences
-Márcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
+Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \author{ w.c.deleeuw@uva.nl }
-\note{ Use the source of the function to compile your own Ridgeogram images.
-}
+\note{}
 \seealso{ Ridgeogram() }
 \examples{
 RidgeogramPlot(Ridgeogram(0.5*rnorm(124)+cos(seq(0.1,12.4,by=0.1))));
 lseq <- c(rnorm(200),rnorm(100,-1),rnorm(50),rnorm(50,4.0),rnorm(100))
-RidgeogramPlot(Ridgeogram(lseq),0.05,"Example ridgeogram",high.col="green",low.col="red")
+rg <- Ridgeogram(lseq)
+RidgeogramPlot(rg,0.05,"Example ridgeogram",high.col="green",low.col="red")
 }
 \keyword{ hplot }
