@@ -19,16 +19,11 @@ Ridges(s, window.size, pos=NULL,pval = 0.05, antiRidge = FALSE,
   \item{min.sup}{ The minimum number of window.sizes which have to find a ridge for a certain point to consider it a ridge }
   \item{resolution}{ Resolution of the ridge calculation (for localized SigWin only) }
 }
-\details{
-}
 \value{
   A data frame is returned containing a row for each found ridge and 
   the start and end positions in the columns
 }
 \author{ w.c.deLeeuw@uva.nl }
-\note{
-
-}
 \seealso{ SigWin,Ridgeogram }
 \examples{
 	lseq <- c(rnorm(200),rnorm(100,-1),rnorm(50),

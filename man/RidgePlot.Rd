@@ -19,16 +19,12 @@ RidgePlot(ridges,x,y,ptitle="Ridges",labels=NULL,col=NULL,...)
 \details{
   An xy-plot will be drawn with the ridges shown as rectangles behind the graph.
 }
-\value{
-}
 \references{ SigWin-detector: a Grid-enabled workflow for discovering 
 enriched windows of genomic features related to DNA sequences
 Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum, 
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \author{ w.c.deleeuw@uva.nl }
-\note{ 
-}
 \seealso{ Ridges,SigWin}
 \examples{
 x<-sort(unlist(sapply(1:10,function(i) {runif(round((rnorm(1,0,10))^2),i-1,i)})))

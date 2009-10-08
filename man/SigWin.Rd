@@ -30,8 +30,6 @@ SigWin(s,window.size,pos=NULL,antiRidge=FALSE,adjust.method="BH",circular=FALSE,
   over the edges of the sequence into the other ende of the sequence. }
   \item{resolution}{ resolution of SigWin calculation for localized sequences. Value is ignored for calculations without location data  }
 }
-\details{
-}
 \value{
 A sequence containing the p-values corrected for multiple testing. For
 simple non localized sequences the length of the output sequence is the

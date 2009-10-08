@@ -27,9 +27,6 @@ Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum,
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \author{ w.c.deleeuw@uva.nl }
-\note{ 
-
-}
 \seealso{ Ridgeogram,PosRidgeogram,RidgeogramPlot }
 \examples{
 

@@ -17,8 +17,6 @@ Ridgeogram(s,adjust.method="BH",circular=FALSE)
   \item{adjust.method}{ method for multiple testing correction (see p.adjust for valid options) }
   \item{circular}{ assume the sequence is circular }
 }
-\details{
-}
 \value{
   A list containing 
   \item{high }{ 

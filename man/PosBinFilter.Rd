@@ -15,8 +15,6 @@ PosBinFilter(x, y, steps)
   \item{y}{ The sample values  }
   \item{steps}{ The number of values in the new sequence }
 }
-\details{
-}
 \value{
   The function returns a list of length \code{steps}. The signal is approximated 
 over the range of values in x in bins equal length. For each bin the median value 

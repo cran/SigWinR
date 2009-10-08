@@ -1,5 +1,5 @@
 `RidgeogramPlot` <-
-function(ridgeogram,pval=0.05,ptitle="Ridgeogram",high.col="red",low.col="blue")
+function(ridgeogram,pval=0.05,ptitle="Ridgeogram",high.col="red",low.col="blue",p.range.min="auto")
 {
     if (!is.numeric(ridgeogram$high) || !is.numeric(ridgeogram$low)) {
         cat("RidgeogramPlot: Something wrong with ridgeogram\n")
@@ -15,8 +15,16 @@ function(ridgeogram,pval=0.05,ptitle="Ridgeogram",high.col="red",low.col="blue")
 #calculate log the ridgeogram values to get out the variation in p-values 
     i.p <- log10(ridgeogram$high)
     i.n <- log10(ridgeogram$low)
-    min.p <- min(i.p)
-    min.n <- min(i.n)
+    if (p.range.min == "auto") {
+        min.p <- min(i.p)
+        min.n <- min(i.n)
+    } else {
+        min.p <- log10(p.range.min);
+        min.n <- log10(p.range.min);
+        i.p = pmax(i.p,min.p);
+        i.n = pmax(i.n,min.n);
+    }
+
 #limit value for showing ridges/antiridges 
     lalfa <- log10(pval)
 #generate colormappings based on supplied color. 
@@ -30,13 +38,13 @@ function(ridgeogram,pval=0.05,ptitle="Ridgeogram",high.col="red",low.col="blue")
 
 # add the positive half of the ridgeogram (Ridges) if any
 # the data is in an array so we can draw it as an image 
-    if (min.p < lalfa) {
+    if (min.p <= lalfa) {
         image(x = 1:nrow(i.p), y = 1:ncol(i.p), z = i.p, zlim = c(min.p,
             lalfa), add = TRUE, col = high.pall)
     }
 
 # plot the negative half of the ridgeogram (Anti Ridges) if any
-    if (min.n < lalfa) {
+    if (min.n <= lalfa) {
         image(x = 1:nrow(i.n), y = 1:ncol(i.n), z = i.n, zlim = c(min.n,
             lalfa), add = TRUE, col = low.pall)
     }
@@ -66,12 +74,12 @@ function(ridgeogram,pval=0.05,ptitle="Ridgeogram",high.col="red",low.col="blue")
     rg <- pretty(c(min.p, lalfa), 10)
     m = matrix(rg, nrow = 1, ncol = length(rg))
     image(m, xaxt = "n", yaxt = "n", ylab = "p-val higher", col = high.pall)
-    axis(2, label = as.list(signif(10^rg, 2)), at = seq(0, 1,
+    axis(2, labels = as.list(signif(10^rg, 2)), at = seq(0, 1,
         by = (1/(length(rg) - 1))))
     rg <- pretty(c(min.n, lalfa), 10)
     m = matrix(rg, nrow = 1, ncol = length(rg))
     image(m, xaxt = "n", yaxt = "n", ylab = "p-val lower", col = low.pall)
-    axis(2, label = as.list(signif(10^rg, 2)), at = seq(0, 1,
+    axis(2, labels = as.list(signif(10^rg, 2)), at = seq(0, 1,
         by = (1/(length(rg) - 1))))
 # plot the sequence below the ridgeogram if position information is supplied (pos) then use it. 
     par(mar = c(2, 4, 1, 2))

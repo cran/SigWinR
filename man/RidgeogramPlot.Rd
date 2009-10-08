@@ -5,7 +5,7 @@
   Basic RIDGEOGRAM plotter.  
 }
 \usage{
-RidgeogramPlot(ridgeogram, pval=0.05, ptitle = "Ridgeogram", high.col = "red", low.col = "blue")
+RidgeogramPlot(ridgeogram, pval=0.05, ptitle = "Ridgeogram", high.col = "red", low.col = "blue",p.range.min)
 }
 \arguments{
   \item{ridgeogram}{ridgeogram to plot. If not given it will be calculated }
@@ -13,6 +13,7 @@ RidgeogramPlot(ridgeogram, pval=0.05, ptitle = "Ridgeogram", high.col = "red", l
   \item{ptitle}{ title of the graph }
   \item{high.col}{ color used to show positive significant windows  }
   \item{low.col}{ color used to show negative significant windows }
+  \item{p.range.min}{lower-bound for p-value color-range. }
 }
 \details{
 	In the plot the ridgeogram is plotted along with the sequence used as input of the graph. 
@@ -23,7 +24,6 @@ Marcia A Inda, Marinus F van Batenburg, Marco Roos, Adam SZ Belloum,
 Dmitry Vasunin, Adianto Wibisono, Antoine HC van Kampen, and Timo M Breit
 BMC Research Notes 2008; 1:63}
 \author{ w.c.deleeuw@uva.nl }
-\note{}
 \seealso{ Ridgeogram() }
 \examples{
 RidgeogramPlot(Ridgeogram(0.5*rnorm(124)+cos(seq(0.1,12.4,by=0.1))));
